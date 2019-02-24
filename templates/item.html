@@ -1,0 +1,30 @@
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{url_for('static',
+    filename='styles.css')}}">
+</head>
+<body>
+<h1>{{item.item_name}} Item additions</h1>
+<br>
+
+<p>{{item.description}}</p>
+
+<a href="{{url_for('all_items')}}">Home Items</a>
+<br>
+<a href="{{url_for('new_item_add', item_id = item.id)}}">Additions to Junk Category Item</a>
+<p></p>
+{% for i in item_adds %}
+<p>{{i.item_add_name}}</p>
+
+<p> Description : {{i.description}}</p>
+
+<a href="{{url_for('delete_item_add', item_id = item.id,
+          item_add_id = i.id)}}"> Delete Item </a>
+
+<a href="{{url_for('edit_item_add', item_id = item.id,
+                    item_add_id = i.id)}}"> Edit Item </a>
+
+{% endfor %}
+
+</body>
+</html>

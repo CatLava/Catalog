@@ -1,0 +1,26 @@
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{url_for('static',
+    filename='styles.css')}}">
+</head>
+<body>
+<h1>Welcome to your Junk Yard Selection</h1>
+<p> Here are your items!</p>
+<a href="{{url_for('login')}}">Login</a>
+
+<p>
+</p>
+{%for i in items %}
+
+<h2>{{i.item_name}}</h2>
+<p> Description : {{i.description}}</p>
+
+
+<a href="{{url_for('view_item', item_id = i.id)}}">See Item Additions</a>
+
+
+{%endfor%}
+
+
+</body>
+</html>

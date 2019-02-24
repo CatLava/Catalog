@@ -1,0 +1,42 @@
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{url_for('static',
+    filename='styles.css')}}">
+</head>
+<body>
+<h1>Welcome to your Junk Yard Selection</h1>
+<p> Here are your items!</p>
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+{% for message in messages %}
+  <li><strong>{{message}}</strong></li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<a href="{{url_for('gdisconnect')}}">Logout</a>
+
+<p>
+<a href="{{url_for('new_item')}}">Add New Junk Item</a>
+</p>
+{%for i in items %}
+
+<h2>{{i.item_name}}</h2>
+<p> Description : {{i.description}}</p>
+
+<a href="{{url_for('view_item', item_id = i.id)}}">See Item Additions</a>
+
+<a href="{{url_for('delete_item', item_id = i.id)}}">Delete Item</a>
+
+<a href="{{url_for('edit_item', item_id = i.id)}}">Edit Item</a>
+
+{%endfor%}
+
+
+</body>
+</html>

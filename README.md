@@ -10,7 +10,7 @@ This web application is set up in a vagrant VM envirnoment that encapsulates all
 https://www.vagrantup.com/
 
 ### Packages Required:
-Flask, sqlalchemy, httplib2, json, requests, and sqllite
+Flask, sqlalchemy, httplib2, json, requests, oauth2client and sqllite
 Below steps will have this app fully functioning
 
 1. Run the catalog_database.py to create the database catalog.db
